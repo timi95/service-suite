@@ -5,15 +5,16 @@ import com.service.suite.orderservice.dto.OrderRequest;
 import com.service.suite.orderservice.model.Order;
 import com.service.suite.orderservice.model.OrderLineItem;
 import com.service.suite.orderservice.repository.OrderRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class OrderService {
     private final OrderRepository orderRepository;
     public void placeOrder(OrderRequest orderRequest) {
@@ -31,7 +32,7 @@ public class OrderService {
 
     private OrderLineItem mapToDto(OrderLineItemDto dto) {
 
-        return new OrderLineItem()
+        return OrderLineItem
                 .builder()
                     .price(dto.getPrice())
                     .quantity(dto.getQuantity())
