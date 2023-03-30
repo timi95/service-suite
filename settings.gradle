@@ -3,3 +3,5 @@ rootProject.name = 'service-suite'
 include 'inventory-service'
 include 'order-service'
 include 'product-service'
+include 'discovery-server'
+

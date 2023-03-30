@@ -1,5 +1,4 @@
 package com.servicesuite.inventoryservice;
-
 import com.servicesuite.inventoryservice.model.Inventory;
 import com.servicesuite.inventoryservice.repository.InventoryRepository;
 import org.springframework.boot.CommandLineRunner;
