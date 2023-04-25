@@ -25,6 +25,14 @@ repositories {
 
 ext {
     set('springCloudVersion', "2022.0.2")
+    springCloudSleuthOtelVersion = "1.1.3"
+}
+
+dependencyManagement {
+    imports {
+        def releaseTrainVersion="2020.0.0-RC1"
+        mavenBom "org.springframework.cloud:spring-cloud-sleuth-otel-dependencies:${springCloudSleuthOtelVersion}"
+    }
 }
 
 dependencies {

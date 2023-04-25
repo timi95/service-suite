@@ -27,13 +27,13 @@ repositories {
 dependencies {
 	// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-	def testcontainersVersion = '1.17.6'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	def testcontainersVersion = '1.17.6'
 	testImplementation "org.testcontainers:junit-jupiter:${testcontainersVersion}"
 	testImplementation "org.testcontainers:testcontainers:${testcontainersVersion}"
 	testImplementation "org.testcontainers:mongodb:${testcontainersVersion}"
