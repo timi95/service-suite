@@ -1,0 +1,16 @@
+FROM eclipse-temurin:19-jre as builder
+WORKDIR extracted
+ADD build/libs/*.jar .
+RUN java -Djarmode=layertools -jar api-gateway-0.0.1-SNAPSHOT.jar extract
+
+FROM eclipse-temurin:19-jre
+WORKDIR application
+COPY --from=builder extracted/dependencies/ ./
+RUN true
+COPY --from=builder extracted/spring-boot-loader/ ./
+RUN true
+COPY --from=builder extracted/snapshot-dependencies/ ./
+RUN true
+COPY --from=builder extracted/application/ ./
+EXPOSE 8080
+ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]

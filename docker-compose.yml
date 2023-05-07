@@ -1,6 +1,10 @@
+name: service-suite
 ---
 version: '3'
 services:
+  api-gateway:
+    image: openjdk:19-alpine
+
   zookeeper:
     image: confluentinc/cp-zookeeper:7.3.2
     container_name: zookeeper
