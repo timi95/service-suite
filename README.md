@@ -6,7 +6,7 @@ A multi module gradle project built with Spring Boot.
 
 
 ## Ingredients
-- Api Gateway (single point of entry)
+- Api-Gateway
 - SSO (with Okta, because it was easy to setup)
 - Test Containers (containerised tests)
 - Containerised services with Docker
