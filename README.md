@@ -14,4 +14,3 @@ A multi module gradle project built with Spring Boot.
 - Resilience4J circuit breaker for fault tolerance in the system.
 - Kafka message broker for asynchronous messaging
 - Distributed tracing with Zipkin and Spring sleuth
-- 
